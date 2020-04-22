@@ -15,18 +15,63 @@ public class Contact {
     private String name;
     private String email;
     private String address;
+    private String city;
+    private String state;
+    private String zip;
     private String telephone;
- 
+    private String emergency;
+    private String website;
+
     public Contact() {
     }
- 
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getEmergency() {
+        return emergency;
+    }
+
+    public void setEmergency(String emergency) {
+        this.emergency = emergency;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public Contact(String name, String email, String address, String telephone) {
         this.name = name;
         this.email = email;
         this.address = address;
         this.telephone = telephone;
     }
- 
+
     // getters and setters
 
     public int getId() {

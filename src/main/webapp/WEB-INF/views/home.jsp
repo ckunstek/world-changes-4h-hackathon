@@ -17,7 +17,12 @@
 	        	<th>Name</th>
 	        	<th>Email</th>
 	        	<th>Address</th>
+	        	<th>City</th>
+	        	<th>State</th>
+	        	<th>Zip</th>
 	        	<th>Telephone</th>
+	        	<th>Emergency</th>
+	        	<th>Website</th>
 	        	<th>Action</th>
 	        	
 				<c:forEach var="contact" items="${listContact}" varStatus="status">
@@ -26,7 +31,12 @@
 					<td>${contact.name}</td>
 					<td>${contact.email}</td>
 					<td>${contact.address}</td>
+					<td>${contact.city}</td>
+					<td>${contact.state}</td>
+					<td>${contact.zip}</td>
 					<td>${contact.telephone}</td>
+					<td>${contact.emergency}</td>
+					<td>${contact.website}</td>
 					<td>
 						<a href="editContact?id=${contact.id}">Edit</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;

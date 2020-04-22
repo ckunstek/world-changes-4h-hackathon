@@ -27,8 +27,28 @@
 				<td><form:input path="address" /></td>
 			</tr>
 			<tr>
+				<td>City:</td>
+				<td><form:input path="city" /></td>
+			</tr>
+			<tr>
+				<td>State:</td>
+				<td><form:input path="state" /></td>
+			</tr>
+			<tr>
+				<td>Zip:</td>
+				<td><form:input path="zip" /></td>
+			</tr>
+			<tr>
 				<td>Telephone:</td>
 				<td><form:input path="telephone" /></td>
+			</tr>
+			<tr>
+				<td>Emergency Phone:</td>
+				<td><form:input path="emergency" /></td>
+			</tr>
+			<tr>
+				<td>Website:</td>
+				<td><form:input path="website" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="Save"></td>
