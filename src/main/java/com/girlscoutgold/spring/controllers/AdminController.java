@@ -48,14 +48,14 @@ public class AdminController {
 	@RequestMapping(value = "/admin/saveContact", method = RequestMethod.POST)
 	public ModelAndView saveContact(@ModelAttribute Contact contact) {
 		contactDAO.saveOrUpdate(contact);
-		return new ModelAndView("redirect:" + urlPrefix + "/admin");
+		return new ModelAndView("redirect:" + urlPrefix + "/admin/");
 	}
 
 	@RequestMapping(value = "/admin/deleteContact", method = RequestMethod.GET)
 	public ModelAndView deleteContact(HttpServletRequest request) {
 		int contactId = Integer.parseInt(request.getParameter("id"));
 		contactDAO.delete(contactId);
-		return new ModelAndView("redirect:" + urlPrefix + "/admin");
+		return new ModelAndView("redirect:" + urlPrefix + "/admin/");
 	}
 
 	@RequestMapping(value = "/admin/editContact", method = RequestMethod.GET)

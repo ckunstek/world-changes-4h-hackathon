@@ -38,9 +38,9 @@
 					<td>${contact.emergency}</td>
 					<td>${contact.website}</td>
 					<td>
-						<a href="admin/editContact?id=${contact.id}">Edit</a>
+						<a href="editContact?id=${contact.id}">Edit</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="admin/deleteContact?id=${contact.id}">Delete</a>
+						<a href="deleteContact?id=${contact.id}">Delete</a>
 					</td>
 							
 	        	</tr>
