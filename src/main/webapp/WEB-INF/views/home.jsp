@@ -5,47 +5,55 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Contact Manager Home</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Contact Listing</title>
+		<style>
+			.listing {
+				padding-left: 30px;
+				padding-top: 20px;
+			}
+			.record {    
+				font-family: "Open Sans",sans-serif;
+				color: #333;
+				text-rendering: optimizeLegibility;
+				line-height: 1.5;
+				-webkit-font-smoothing: antialiased;
+			}
+			.heading {    
+				font-family: "Open Sans",sans-serif;
+				font-weight:300;
+				font-size:2rem;
+				margin-bottom:2rem;
+				color: #333;
+				text-rendering: optimizeLegibility;
+				line-height: 1.5;
+				-webkit-font-smoothing: antialiased;
+			}
+			
+		</style>
     </head>
     <body>
-    	<div align="center">
-	        <h1>Contact List</h1>
-	        <h3><a href="newContact">New Contact</a></h3>
-	        <table border="1">
-	        	<th>No</th>
-	        	<th>Name</th>
-	        	<th>Email</th>
-	        	<th>Address</th>
-	        	<th>City</th>
-	        	<th>State</th>
-	        	<th>Zip</th>
-	        	<th>Telephone</th>
-	        	<th>Emergency</th>
-	        	<th>Website</th>
-	        	<th>Action</th>
-	        	
-				<c:forEach var="contact" items="${listContact}" varStatus="status">
-	        	<tr>
-	        		<td>${status.index + 1}</td>
-					<td>${contact.name}</td>
-					<td>${contact.email}</td>
-					<td>${contact.address}</td>
-					<td>${contact.city}</td>
-					<td>${contact.state}</td>
-					<td>${contact.zip}</td>
-					<td>${contact.telephone}</td>
-					<td>${contact.emergency}</td>
-					<td>${contact.website}</td>
-					<td>
-						<a href="editContact?id=${contact.id}">Edit</a>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="deleteContact?id=${contact.id}">Delete</a>
-					</td>
-							
-	        	</tr>
-				</c:forEach>	        	
-			</table>
+    	<div class="listing">
+			<div class="heading">Mental Health Providers</div>
+			<c:forEach var="contact" items="${listContact}" varStatus="status">
+			<div class="record">
+				<div><b>${contact.name}</b></div>
+				<div>${contact.address}</div>
+				<div>${contact.city}, ${contact.state} ${contact.zip}</div>
+				<div>Phone: ${contact.telephone}</div>
+				<c:if test="${not empty contact.emergency}">
+				<div>Emergency: ${contact.emergency}</div>
+				</c:if>
+				<c:if test="${not empty contact.email}">
+				<div>Email: <a href="mailto:${contact.email}">${contact.email}</a></div>
+				</c:if>
+				<c:if test="${not empty contact.website}">
+				<div>Website: <a href="${contact.website}">${contact.website}</a></div>
+				</c:if>
+			</div>
+			<br/>
+			<br/>
+			</c:forEach>	        	
     	</div>
     </body>
 </html>
